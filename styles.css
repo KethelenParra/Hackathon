@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #faa0cc;
+    color: #fff;
+    padding: 5px; /* Diminuído de 20px para 10px */
+}
+
+.logo {
+    flex: 0 0 auto; /* Impede que a logo cresça */
+}
+.logo img {
+    width: 80px; /* Reduzi a largura da logo para acompanhar a diminuição do header */
+    height: auto;
+}
+
+.titulo {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5em; /* Reduzi o tamanho do título */
+}
+
+nav {
+    flex: 0 0 auto; /* Impede que a navegação cresça */
+}
+
+.logo h1 {
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seção Hero */
+#hero {
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+/* Seções */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h3 {
+    color: #e60073;
+    margin-bottom: 10px;
+}
+
+section ul, section ol {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+section p {
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #hero {
+        padding: 60px 20px;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+}
