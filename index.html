@@ -15,7 +15,8 @@
         <nav>
             <ul class="opcoes">
                 <li><a href="autoexame/indexAutExam.html">Autoexame</a></li>
-                <li><a href="contatos/contato.html">Contatos</a></li>
+                <li><a href="api/index.html">Contatos</a></li>
+                <li><a href="index.html">Home</a></li>
             </ul>
         </nav>
     </header>
@@ -85,12 +86,16 @@
     </div>
     
     <!-- Caixa de chat -->
-    <div id="chatbox" class="hidden">
+    <div id="chatbox">
         <div id="history"></div>
-        <input type="text" id="message-input" placeholder="Digite sua mensagem...">
-        <button id="btn-submit" >Enviar</button>
+        <input type="text" id="message-input" placeholder="Digite sua mensagem..." />
+        <div class="button-container">
+            <button id="btn-clear">Limpar</button>
+            <button id="btn-submit">Enviar</button>
+        </div>
     </div>
-
+    
+   
     <footer>
         <p>&copy; 2024 Toque Rosa. Todos os direitos reservados.</p>
     </footer>

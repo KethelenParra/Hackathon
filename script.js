@@ -3,9 +3,9 @@ const perguntasRespostas = {
     "como posso fazer o autoexame?": "Você pode fazer o autoexame tocando suas mamas com movimentos circulares, cobrindo toda a área e observando mudanças.",
     "quais são os sintomas do câncer de mama?": "Os sintomas podem incluir nódulos palpáveis, mudanças na forma da mama, alterações na pele e secreção no mamilo.",
     "quando devo procurar um médico?": "Você deve procurar um médico se perceber algum nódulo ou mudança incomum nas suas mamas.",
-    "encontrei um nódulo. isso significa que tenho câncer?": "Nem todos os nódulos são cancerosos. Muitas vezes, podem ser benignos. É importante procurar um médico para uma avaliação mais detalhada.",
+    "Encontrei um nódulo. isso significa que tenho câncer?": "Nem todos os nódulos são cancerosos. Muitas vezes, podem ser benignos. É importante procurar um médico para uma avaliação mais detalhada.",
     "o que devo fazer se sentir dor durante o autoexame?": "A dor nas mamas pode ser causada por diferentes fatores, incluindo alterações hormonais. Se a dor persistir ou for acompanhada de outros sintomas, consulte um médico.",
-    "detectei uma secreção no mamilo. isso é normal?": "Secreções no mamilo podem ocorrer por várias razões, mas secreções sanguinolentas ou claras devem ser avaliadas por um médico.",
+    "Detectei uma secreção no mamilo. isso é normal?": "Secreções no mamilo podem ocorrer por várias razões, mas secreções sanguinolentas ou claras devem ser avaliadas por um médico.",
     "minhas mamas parecem assimétricas. isso é um problema?": "É normal que uma mama seja ligeiramente maior que a outra. No entanto, se você notar uma nova assimetria ou mudanças significativas, consulte seu médico.",
     "senti mudanças na textura da pele da mama. o que isso significa?": "Mudanças na textura da pele, como pele enrugada ou com aspecto de casca de laranja, podem ser sinais de alerta. Procure um médico para uma avaliação."
 };
@@ -20,33 +20,100 @@ document.addEventListener('DOMContentLoaded', function() {
     // Evento de clique no botão do chatbot
     document.getElementById('chatbot-toggle').addEventListener('click', toggleChat);
 
-    // Enviar mensagem
+    // Função para limpar completamente o chat e mostrar perguntas sugeridas
+    function showSuggestedQuestions() {
+        const history = document.getElementById('history');
+        history.innerHTML = ''; // Limpa todo o histórico do chat antes de mostrar as sugestões
+
+        const suggestionsContainer = document.createElement('div');
+        suggestionsContainer.classList.add('suggestions-container');
+        
+        const question1 = document.createElement('button');
+        question1.textContent = 'O que é câncer de mama?';
+        question1.onclick = () => handleSuggestedQuestion('o que é câncer de mama?', suggestionsContainer);
+        
+        const question2 = document.createElement('button');
+        question2.textContent = 'Como posso fazer o autoexame?';
+        question2.onclick = () => handleSuggestedQuestion('como posso fazer o autoexame?', suggestionsContainer);
+        
+        const question3 = document.createElement('button');
+        question3.textContent = 'Detectei uma secreção no mamilo. isso é normal?';
+        question3.onclick = () => handleSuggestedQuestion('Detectei uma secreção no mamilo. isso é normal?', suggestionsContainer);
+        
+        const question4 = document.createElement('button');
+        question4.textContent = 'Encontrei um nódulo. isso significa que tenho câncer?';
+        question4.onclick = () => handleSuggestedQuestion('Encontrei um nódulo. isso significa que tenho câncer?', suggestionsContainer);
+        
+        suggestionsContainer.appendChild(question1);
+        suggestionsContainer.appendChild(question2);
+        suggestionsContainer.appendChild(question3);
+        suggestionsContainer.appendChild(question4);
+        
+        history.appendChild(suggestionsContainer);
+    }
+
+    // Função para lidar com perguntas sugeridas e remover as outras perguntas
+    function handleSuggestedQuestion(question, suggestionsContainer) {
+        const history = document.getElementById('history');
+        
+        // Remover as sugestões após uma seleção
+        suggestionsContainer.remove();
+        
+        // Adiciona a pergunta do usuário (simulada a partir da sugestão)
+        const userMessage = document.createElement('div');
+        userMessage.textContent = 'Você: ' + question;
+        userMessage.classList.add('user-message');
+        history.appendChild(userMessage);
+
+        // Buscar a resposta no banco de dados
+        const resposta = perguntasRespostas[question];
+        const botResponse = document.createElement('div');
+        botResponse.classList.add('bot-response');
+        if (resposta) {
+            botResponse.textContent = 'Resposta: ' + resposta;
+            history.appendChild(botResponse);
+        } else {
+            botResponse.textContent = 'Resposta: Desculpe, não entendi sua pergunta. Tente outra vez.';
+            history.appendChild(botResponse);
+        }
+
+        // Verificar se a pergunta é uma das três últimas para adicionar resposta automática
+        const perguntasAdicionais = [
+            "Encontrei um nódulo. isso significa que tenho câncer?",
+            "Detectei uma secreção no mamilo. isso é normal?",
+            "senti mudanças na textura da pele da mama. o que isso significa?"
+        ];
+        
+        if (perguntasAdicionais.includes(question)) {
+            const extraMessage = document.createElement('div');
+            extraMessage.classList.add('bot-response');
+            extraMessage.textContent = 'Sou um assistente virtual e, embora eu busque fornecer informações úteis, posso não estar sempre correto. Recomendo que você procure uma clínica ou seu médico para realizar um exame com um especialista. Em nosso site, há uma seção de contatos onde você pode encontrar a clínica mais próxima com urgência.';
+            history.appendChild(extraMessage);
+        }
+
+        // Rolar o histórico para mostrar a última mensagem
+        history.scrollTop = history.scrollHeight;
+    }
+
+    // Evento do botão de "Limpar" para limpar o chat e voltar às perguntas sugeridas
+    document.getElementById('btn-clear').addEventListener('click', function() {
+        // Aqui, limpamos todo o histórico antes de exibir as sugestões de novo
+        const history = document.getElementById('history');
+        history.innerHTML = '';  // Limpa o histórico de todas as mensagens
+
+        showSuggestedQuestions(); // Volta para as perguntas sugeridas
+    });
+
+    // Chama a função para mostrar as perguntas sugeridas assim que a página carregar
+    showSuggestedQuestions();
+
+    // Enviar mensagem manualmente (fora das sugestões)
     document.getElementById('btn-submit').addEventListener('click', function() {
         const messageInput = document.getElementById('message-input');
         const message = messageInput.value.trim();
         if (message !== '') {
-            const history = document.getElementById('history');
-            
-            // Adicionar a pergunta do usuário
-            const userMessage = document.createElement('div');
-            userMessage.textContent = 'Você: ' + message;
-            userMessage.classList.add('user-message');
-            history.appendChild(userMessage);
-
-            // Verificar se a pergunta existe no "banco de dados"
-            const resposta = perguntasRespostas[message];
-            const botResponse = document.createElement('div');
-            botResponse.classList.add('bot-response');
-            if (resposta) {
-                botResponse.textContent = 'Resposta: ' + resposta;
-            } else {
-                botResponse.textContent = 'Resposta: Desculpe, não entendi sua pergunta. Tente outra vez.';
-            }
-            history.appendChild(botResponse);
-
-            // Limpar o campo de entrada e rolar o histórico para a última mensagem
-            messageInput.value = '';
-            history.scrollTop = history.scrollHeight;
+            handleSuggestedQuestion(message, document.querySelector('.suggestions-container'));
+            messageInput.value = ''; // Limpar o campo de entrada
         }
     });
 });

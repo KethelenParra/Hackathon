@@ -1,0 +1,97 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+    display: flex;
+    justify-content: center; /* Centraliza todo o conteúdo horizontalmente */
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #faa0cc;
+    color: #fff;
+    padding: 0.1%; 
+    border-bottom-left-radius: 13px;  
+    border-bottom-right-radius: 13px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 60px; 
+    height: auto;
+    margin-left: 6vh;
+}
+
+.titulo {
+    flex: 1;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+nav {
+    flex: 0 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.opcoes{
+    margin-right: 7vh;
+    justify-content: space-between;
+}
+
+.opcoes li{
+    margin-right: 25px;
+}
+
+/* Seções */
+main {
+    max-width: 800px; /* Limita a largura do conteúdo para melhor legibilidade */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px;
+}
+
+.container{
+    display: flex;
+    align-items: center;   
+    justify-content: start;
+    padding: 20px;
+}
+
+.container .texto{
+    width: 50%; /* Define a largura do texto */
+    padding-right: 20px; /* Adiciona um espaço entre o texto e o vídeo */
+    justify-content: right;
+}
