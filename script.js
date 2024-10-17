@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         history.appendChild(suggestionsContainer);
     }
 
-    // Função para lidar com perguntas sugeridas e remover as outras perguntas
+// Função para lidar com perguntas sugeridas e remover as outras perguntas
     function handleSuggestedQuestion(question, suggestionsContainer) {
         const history = document.getElementById('history');
         
@@ -61,39 +61,54 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Adiciona a pergunta do usuário (simulada a partir da sugestão)
         const userMessage = document.createElement('div');
-        userMessage.textContent = 'Você: ' + question;
+        userMessage.textContent = question;
         userMessage.classList.add('user-message');
         history.appendChild(userMessage);
-
-        // Buscar a resposta no banco de dados
-        const resposta = perguntasRespostas[question];
+        
+        // Adicionar uma mensagem temporária de "carregando"
         const botResponse = document.createElement('div');
         botResponse.classList.add('bot-response');
-        if (resposta) {
-            botResponse.textContent = 'Resposta: ' + resposta;
-            history.appendChild(botResponse);
-        } else {
-            botResponse.textContent = 'Resposta: Desculpe, não entendi sua pergunta. Tente outra vez.';
-            history.appendChild(botResponse);
-        }
-
-        // Verificar se a pergunta é uma das três últimas para adicionar resposta automática
-        const perguntasAdicionais = [
-            "Encontrei um nódulo. isso significa que tenho câncer?",
-            "Detectei uma secreção no mamilo. isso é normal?",
-            "senti mudanças na textura da pele da mama. o que isso significa?"
-        ];
-        
-        if (perguntasAdicionais.includes(question)) {
-            const extraMessage = document.createElement('div');
-            extraMessage.classList.add('bot-response');
-            extraMessage.textContent = 'Sou um assistente virtual e, embora eu busque fornecer informações úteis, posso não estar sempre correto. Recomendo que você procure uma clínica ou seu médico para realizar um exame com um especialista. Em nosso site, há uma seção de contatos onde você pode encontrar a clínica mais próxima com urgência.';
-            history.appendChild(extraMessage);
-        }
+        botResponse.textContent = '...';  // Mensagem de carregando
+        history.appendChild(botResponse);
 
         // Rolar o histórico para mostrar a última mensagem
         history.scrollTop = history.scrollHeight;
+
+        // Simular um tempo de carregamento antes de exibir a resposta
+        setTimeout(function() {
+            // Buscar a resposta no banco de dados
+            const resposta = perguntasRespostas[question];
+            if (resposta) {
+                botResponse.textContent = resposta;  // Substituir pela resposta correta
+            } else {
+                botResponse.textContent = 'Desculpe, não entendi sua pergunta. Tente outra vez.';
+            }
+
+            // Verificar se a pergunta é uma das três últimas para adicionar resposta automática
+            const perguntasAdicionais = [
+                "Encontrei um nódulo. isso significa que tenho câncer?",
+                "Detectei uma secreção no mamilo. isso é normal?",
+                "senti mudanças na textura da pele da mama. o que isso significa?"
+            ];
+            
+            if (perguntasAdicionais.includes(question)) {
+                setTimeout(function() {
+                    const extraMessage = document.createElement('div');
+                    extraMessage.classList.add('bot-response');
+                    extraMessage.textContent = 'Sou um assistente virtual e, embora eu busque fornecer informações úteis, posso não estar sempre correto. Recomendo que você procure uma clínica ou seu médico para realizar um exame com um especialista.';
+                    history.appendChild(extraMessage);
+
+                    // Rolar o histórico para mostrar a última mensagem
+                    history.scrollTop = history.scrollHeight;
+                }, 1000); // Atraso de 1 segundo antes de adicionar a mensagem extra
+            }
+
+            // Rolar o histórico para mostrar a última mensagem
+            history.scrollTop = history.scrollHeight;
+        }, 3000); // 3 segundos de atraso
     }
+
+
 
     // Evento do botão de "Limpar" para limpar o chat e voltar às perguntas sugeridas
     document.getElementById('btn-clear').addEventListener('click', function() {

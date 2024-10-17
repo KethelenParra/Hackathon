@@ -266,8 +266,8 @@ input[type="radio"]:checked + label {
 
 /* Estilo do Chatbox */
 #chatbox {
-    width: 300px;
-    height: 500px;
+    width: 400px; /* Aumente a largura */
+    height: 500px; /* Aumente a altura */
     position: fixed;
     bottom: 80px;
     right: 20px;
