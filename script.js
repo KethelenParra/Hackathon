@@ -10,29 +10,6 @@ const perguntasRespostas = {
     "senti mudanças na textura da pele da mama. o que isso significa?": "Mudanças na textura da pele, como pele enrugada ou com aspecto de casca de laranja, podem ser sinais de alerta. Procure um médico para uma avaliação."
 };
 
-function responder(pergunta) {
-    const resposta = perguntasRespostas[pergunta.toLowerCase()];
-    
-    if (resposta) {
-        console.log(resposta);
-
-        // Verifica se a pergunta é uma das duas últimas
-        if (pergunta.toLowerCase() === "minhas mamas parecem assimétricas. isso é um problema?" || 
-            pergunta.toLowerCase() === "senti mudanças na textura da pele da mama. o que isso significa?") {
-            
-                
-            console.log("Procure o postinho de saúde mais perto para realizar o exame por especialistas. Acesse o link abaixo para ser direcionado à página de contatos, onde você poderá inserir seu endereço e ver a unidade de saúde mais próxima.");
-        }
-    } else {
-        console.log("Pergunta não encontrada.");
-    }
-}
-
-// Testando
-responder("senti mudanças na textura da pele da mama. o que isso significa?");
-responder("minhas mamas parecem assimétricas. isso é um problema?");
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Função para alternar a visibilidade do chatbox
     function toggleChat() {
@@ -72,4 +49,34 @@ document.addEventListener('DOMContentLoaded', function() {
             history.scrollTop = history.scrollHeight;
         }
     });
+});
+
+let currentSlide = 1;
+const totalSlides = 3;
+
+function moveSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide > totalSlides) {
+        currentSlide = 1;
+    } else if (currentSlide < 1) {
+        currentSlide = totalSlides;
+    }
+    document.getElementById('slide' + currentSlide).checked = true;
+}
+
+function autoScroll() {
+    moveSlide(1);
+}
+
+// Start auto-scrolling
+let scrollInterval = setInterval(autoScroll, 3000);
+
+// Pause auto-scrolling when hovering over the carousel
+document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
+    clearInterval(scrollInterval);
+});
+
+// Resume auto-scrolling when mouse leaves the carousel
+document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
+    scrollInterval = setInterval(autoScroll, 3000);
 });

@@ -21,7 +21,35 @@
         </nav>
     </header>
     
+    <div class="carousel-container">
+        <input type="radio" name="carousel" id="slide1" checked>
+        <input type="radio" name="carousel" id="slide2">
+        <input type="radio" name="carousel" id="slide3">
+
+        <div class="carousel-slides">
+            <div class="carousel-slide slide-1">
+                <img src="img/Corpo1.png" alt="">
+            </div>
+            <div class="carousel-slide slide-2">
+                <img src="img/Corpo2.png" alt="">
+            </div>
+            <div class="carousel-slide slide-3">
+                <img src="img/Corpo3.png" alt="">
+            </div>
+        </div>
+
+        <div class="carousel-navigation">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+        </div>
+
+        <div class="carousel-arrow carousel-arrow-left" onclick="moveSlide(-1)">&#10094;</div>
+        <div class="carousel-arrow carousel-arrow-right" onclick="moveSlide(1)">&#10095;</div>
+    </div>
+
     <main>
+
         <section id="sobre" class="centralizar">
             <h3>Como Funciona o Autoexame</h3>
             <p>Nossos <strong>modelos de seios em 3D</strong>, projetados com base na anatomia real, foram criados para simular com precisão a textura e a sensação do tecido mamário, incluindo a presença de <strong>nódulos palpáveis</strong>. Esses modelos permitem que você:</p>
@@ -42,7 +70,7 @@
     
         <section id="como-fazer" class="centralizar">
             <h3>Como Realizar o Autoexame?</h3>
-            <h3>Vedeo de animação com a audio descrição?</h3>
+            <h3>Video de animação com a audio descrição?</h3>
             <ol>
                 <li><strong>Toque e observe</strong>: Inspecione visualmente suas mamas em frente ao espelho. Observe alterações no formato, tamanho ou na pele.</li>
                 <li><strong>Deitada ou em pé</strong>: Com os dedos estendidos, pressione suavemente as mamas com movimentos circulares, cobrindo toda a área, inclusive a axila.</li>
