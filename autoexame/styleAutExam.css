@@ -36,9 +36,15 @@ header {
 
 .titulo {
     flex: 1;
-    text-align: center;
+    text-align: center; /* Centraliza o texto dentro do espaço reservado */
     font-size: 1.4em;
+    position: absolute; /* Usa posicionamento absoluto */
+    left: 50%; /* Posiciona o centro do elemento no meio da página */
+    transform: translateX(-50%); /* Ajusta o deslocamento horizontal */
+    font-family: 'Trebuchet MS', sans-serif;
 }
+
+
 
 nav {
     flex: 0 0 auto;
@@ -66,6 +72,7 @@ nav ul li a:hover {
 .opcoes{
     margin-right: 7vh;
     justify-content: space-between;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .opcoes li{
