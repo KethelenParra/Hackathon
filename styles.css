@@ -31,20 +31,16 @@ header {
     justify-content: space-between;
 }
 
-.logo {
-    flex: 0 0 auto; 
-}
-
 .logo img {
     width: 60px; 
     height: auto;
-    margin-left: 20px;
+    margin-left: 6vh;
 }
 
 .titulo {
     flex: 1;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 nav {
@@ -71,7 +67,12 @@ nav ul li a:hover {
 }
 
 .opcoes{
-    margin-right: 5vh;
+    margin-right: 7vh;
+    justify-content: space-between;
+}
+
+.opcoes li{
+    margin-right: 25px;
 }
 
 /* Seções */
