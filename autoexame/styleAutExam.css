@@ -15,6 +15,7 @@ body {
     justify-content: center; /* Centraliza todo o conteúdo horizontalmente */
     align-items: center;
     flex-direction: column;
+    text-align: justify;
 }
 
 /* Header */
@@ -30,16 +31,20 @@ header {
     justify-content: space-between;
 }
 
+.logo {
+    flex: 0 0 auto; 
+}
+
 .logo img {
     width: 60px; 
     height: auto;
-    margin-left: 6vh;
+    margin-left: 20px;
 }
 
 .titulo {
     flex: 1;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 nav {
@@ -66,41 +71,101 @@ nav ul li a:hover {
 }
 
 .opcoes{
-    margin-right: 7vh;
-    justify-content: space-between;
+    margin-right: 5vh;
 }
 
-.opcoes li{
-    margin-right: 25px;
-}
-
-/* Seções */
-main {
-    max-width: 1000px; /* Ajustado para caber tanto o texto quanto o vídeo */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 20px;
-}
-
-/* Ajustes no layout de texto e vídeo */
-.container {
+/* Estilos do Formulário e Mapa */
+form {
+    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px; /* Espaçamento entre as colunas */
+    gap: 10px;
+    justify-content: center;
 }
 
-.assunto {
-    flex: 2; /* O texto ocupa duas vezes mais espaço que o vídeo */
-    text-align: justify;
-    margin-right: 20px; /* Margem à direita para afastar do vídeo */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
 }
 
-.video {
-    flex: 1; /* O vídeo ocupa menos espaço que o texto */
-    max-width: 100%; /* Garante que o vídeo não ultrapasse o container */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #faa0cc;
+    color: white;
+    cursor: pointer;
 }
 
-video {
-    max-width: 100%; /* Garante que o vídeo se ajuste ao container */
-    height: auto;
+button:hover {
+    background-color: #e68ca6;
+}
+
+/* Footer */
+footer {
+    background-color: #faa0cc;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 27px;
+    width: 100%;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Lista de UBS */
+#ubsList {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#ubsList div {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#ubsList h3 {
+    color: #faa0cc;
+    margin-bottom: 5px;
+}
+
+#ubsList p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li { 
+        margin: 10px 0;
+    }
+
+    .logo img {
+        margin-left: 0;
+    }
+
+    .titulo {
+        margin-top: 10px;
+}
 }
