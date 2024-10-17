@@ -31,14 +31,10 @@ header {
     justify-content: space-between;
 }
 
-.logo {
-    flex: 0 0 auto; 
-}
-
 .logo img {
     width: 60px; 
     height: auto;
-    margin-left: 20px;
+    margin-left: 6vh;
 }
 
 .titulo {
@@ -71,7 +67,12 @@ nav ul li a:hover {
 }
 
 .opcoes{
-    margin-right: 5vh;
+    margin-right: 7vh;
+    justify-content: space-between;
+}
+
+.opcoes li{
+    margin-right: 25px;
 }
 
 /* Estilos do Formulário e Mapa */
@@ -108,7 +109,7 @@ footer {
     color: #ffffff;
     text-align: center;
     padding: 20px;
-    margin-top: 27px;
+    margin-top: 200px;
     width: 100%;
 }
 
@@ -147,6 +148,7 @@ footer {
 
 /* Responsividade */
 
+/* Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -167,5 +169,6 @@ footer {
 
     .titulo {
         margin-top: 10px;
+    }
 }
-}
+

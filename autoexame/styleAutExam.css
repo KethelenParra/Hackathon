@@ -15,7 +15,6 @@ body {
     justify-content: center; /* Centraliza todo o conteúdo horizontalmente */
     align-items: center;
     flex-direction: column;
-    text-align: justify;
 }
 
 /* Header */
@@ -77,21 +76,31 @@ nav ul li a:hover {
 
 /* Seções */
 main {
-    max-width: 800px; /* Limita a largura do conteúdo para melhor legibilidade */
+    max-width: 1000px; /* Ajustado para caber tanto o texto quanto o vídeo */
     margin: 0 auto; /* Centraliza horizontalmente */
-    text-align: center; /* Centraliza o texto */
     padding: 20px;
 }
 
-.container{
+/* Ajustes no layout de texto e vídeo */
+.container {
     display: flex;
-    align-items: center;   
-    justify-content: start;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espaçamento entre as colunas */
 }
 
-.container .texto{
-    width: 50%; /* Define a largura do texto */
-    padding-right: 20px; /* Adiciona um espaço entre o texto e o vídeo */
-    justify-content: right;
+.assunto {
+    flex: 2; /* O texto ocupa duas vezes mais espaço que o vídeo */
+    text-align: justify;
+    margin-right: 20px; /* Margem à direita para afastar do vídeo */
+}
+
+.video {
+    flex: 1; /* O vídeo ocupa menos espaço que o texto */
+    max-width: 100%; /* Garante que o vídeo não ultrapasse o container */
+}
+
+video {
+    max-width: 100%; /* Garante que o vídeo se ajuste ao container */
+    height: auto;
 }
