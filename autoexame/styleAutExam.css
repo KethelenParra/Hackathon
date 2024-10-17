@@ -1,24 +1,21 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos do Body */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #fdfdfd;
     color: #333;
     display: flex;
-    justify-content: center; /* Centraliza todo o conteúdo horizontalmente */
+    justify-content: center; 
     align-items: center;
     flex-direction: column;
     text-align: justify;
 }
 
-/* Header */
 header {
     display: flex;
     align-items: center;
@@ -78,58 +75,56 @@ nav ul li a:hover {
 /* Ajusta o espaçamento entre o vídeo e o texto */
 .container {
     display: flex;
-    align-items: flex-start; /* Alinha o conteúdo no topo */
-    justify-content: flex-start; /* Mantém alinhado à esquerda */
-    gap: 60px; /* Aumenta ainda mais o espaço entre o vídeo e o texto */
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    gap: 60px; 
     padding: 20px;
 }
 
 .container video {
-    width: 40%; /* Diminui a largura do vídeo para dar mais espaço ao texto */
-    height: auto; /* Mantém a proporção do vídeo */
-    border-radius: 10px; /* Adiciona bordas arredondadas ao vídeo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar o vídeo */
-    border: 2px solid #faa0cc; /* Adiciona uma borda fina ao redor do vídeo */
-    padding: 10px; /* Espaçamento interno para evitar que a borda encoste no vídeo */
-    background-color: #fff; /* Fundo branco ao redor do vídeo */
+    width: 40%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: 2px solid #faa0cc; 
+    padding: 10px; 
+    background-color: #fff; 
 }
 
 .container .texto {
-    width: 55%; /* Aumenta a largura do texto um pouco mais */
-    padding-right: 20px; /* Adiciona um espaço entre o texto e o vídeo */
+    width: 55%; 
+    padding-right: 20px; 
 }
 
-/* Melhorando a estilização do texto */
 .texto h3, .texto h4 {
-    color: #e60073; /* Cor vibrante para os títulos */
-    font-weight: bold; /* Títulos em negrito */
+    color: #e60073;
+    font-weight: bold; 
 }
 
 .texto p {
-    line-height: 1.8; /* Aumenta o espaçamento entre linhas */
-    margin-bottom: 20px; /* Espaçamento abaixo dos parágrafos */
-    font-size: 1.1em; /* Fonte levemente maior para melhor leitura */
-    text-align: justify; /* Justifica o texto para um visual mais alinhado */
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+    font-size: 1.1em; 
+    text-align: justify; 
 }
 
 .texto ol, .texto ul {
-    margin-left: 20px; /* Espaçamento à esquerda para as listas */
-    margin-bottom: 20px; /* Espaçamento entre listas e outros elementos */
+    margin-left: 20px; 
+    margin-bottom: 20px; 
 }
 
 .texto li {
-    line-height: 1.6; /* Aumenta o espaçamento entre os itens da lista */
-    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+    line-height: 1.6; 
+    margin-bottom: 10px; 
 }
 
 .texto strong {
-    color: #333; /* Cor mais escura para ênfase */
-    font-weight: bold; /* Negrito para palavras importantes */
+    color: #333; 
+    font-weight: bold; 
 }
 
-/* Ajusta a largura máxima do container */
 main {
-    max-width: 1200px; /* Maior largura para o layout com vídeo */
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 20px;
     text-align: left;
@@ -142,8 +137,6 @@ main h2 {
     text-align: center;
 }
 
-
-/* Footer */
 footer {
     background-color: #faa0cc;
     color: #ffffff;
