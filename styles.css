@@ -18,17 +18,16 @@ body {
     text-align: justify;
 }
 
-/* Header */
 header {
     display: flex;
     align-items: center;
     background-color: #faa0cc;
     color: #fff;
-    padding: 0.1%; 
+    padding: 10px;
     border-bottom-left-radius: 13px;  
     border-bottom-right-radius: 13px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantém o espaçamento correto */
 }
 
 .logo img {
@@ -41,6 +40,10 @@ header {
     flex: 1;
     text-align: center;
     font-size: 1.4em;
+}
+
+nav {
+    margin-right: 7vh; /* Define margem para o nav */
 }
 
 nav {
