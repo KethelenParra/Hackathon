@@ -75,23 +75,80 @@ nav ul li a:hover {
     margin-right: 25px;
 }
 
-/* Seções */
-main {
-    max-width: 800px; /* Limita a largura do conteúdo para melhor legibilidade */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    text-align: center; /* Centraliza o texto */
-    padding: 20px;
-}
-
-.container{
+/* Ajusta o espaçamento entre o vídeo e o texto */
+.container {
     display: flex;
-    align-items: center;   
-    justify-content: start;
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+    justify-content: flex-start; /* Mantém alinhado à esquerda */
+    gap: 60px; /* Aumenta ainda mais o espaço entre o vídeo e o texto */
     padding: 20px;
 }
 
-.container .texto{
-    width: 50%; /* Define a largura do texto */
+.container video {
+    width: 40%; /* Diminui a largura do vídeo para dar mais espaço ao texto */
+    height: auto; /* Mantém a proporção do vídeo */
+    border-radius: 10px; /* Adiciona bordas arredondadas ao vídeo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar o vídeo */
+    border: 2px solid #faa0cc; /* Adiciona uma borda fina ao redor do vídeo */
+    padding: 10px; /* Espaçamento interno para evitar que a borda encoste no vídeo */
+    background-color: #fff; /* Fundo branco ao redor do vídeo */
+}
+
+.container .texto {
+    width: 55%; /* Aumenta a largura do texto um pouco mais */
     padding-right: 20px; /* Adiciona um espaço entre o texto e o vídeo */
-    justify-content: right;
+}
+
+/* Melhorando a estilização do texto */
+.texto h3, .texto h4 {
+    color: #e60073; /* Cor vibrante para os títulos */
+    font-weight: bold; /* Títulos em negrito */
+}
+
+.texto p {
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+    margin-bottom: 20px; /* Espaçamento abaixo dos parágrafos */
+    font-size: 1.1em; /* Fonte levemente maior para melhor leitura */
+    text-align: justify; /* Justifica o texto para um visual mais alinhado */
+}
+
+.texto ol, .texto ul {
+    margin-left: 20px; /* Espaçamento à esquerda para as listas */
+    margin-bottom: 20px; /* Espaçamento entre listas e outros elementos */
+}
+
+.texto li {
+    line-height: 1.6; /* Aumenta o espaçamento entre os itens da lista */
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+.texto strong {
+    color: #333; /* Cor mais escura para ênfase */
+    font-weight: bold; /* Negrito para palavras importantes */
+}
+
+/* Ajusta a largura máxima do container */
+main {
+    max-width: 1200px; /* Maior largura para o layout com vídeo */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+main h2 {
+    color: #e60073;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+/* Footer */
+footer {
+    background-color: #faa0cc;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
 }

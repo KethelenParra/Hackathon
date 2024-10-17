@@ -17,8 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbox.classList.toggle('hidden');
     }
 
+    // Garantir que o chat comece oculto
+    const chatbox = document.getElementById('chatbox');
+    chatbox.classList.add('hidden');  // Chat começa oculto
+
     // Evento de clique no botão do chatbot
     document.getElementById('chatbot-toggle').addEventListener('click', toggleChat);
+
+    // Abre automaticamente o chatbot após 50 segundos
+    setTimeout(function() {
+        toggleChat(); // Abre o chatbox após o tempo definido
+    }, 50000); // 50 segundos em milissegundos (50000)
 
     // Função para limpar completamente o chat e mostrar perguntas sugeridas
     function showSuggestedQuestions() {
@@ -52,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         history.appendChild(suggestionsContainer);
     }
 
-// Função para lidar com perguntas sugeridas e remover as outras perguntas
+    // Função para lidar com perguntas sugeridas e remover as outras perguntas
     function handleSuggestedQuestion(question, suggestionsContainer) {
         const history = document.getElementById('history');
         
@@ -107,8 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
             history.scrollTop = history.scrollHeight;
         }, 3000); // 3 segundos de atraso
     }
-
-
 
     // Evento do botão de "Limpar" para limpar o chat e voltar às perguntas sugeridas
     document.getElementById('btn-clear').addEventListener('click', function() {
