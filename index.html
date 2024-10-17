@@ -9,44 +9,40 @@
 <body>
     <header>
         <div class="logo">
-            <img src="img/logo_hackathon.png" alt="Toque Rosa Logo">
+            <img src="img/logo_hackathon_brancasvg.svg" alt="Toque Rosa Logo">
         </div>
-        <h1 class="titulo">Conscientização sobre Câncer de Mama</h1>
+        <h3 class="titulo">Conscientização sobre Câncer de Mama</h3>
         <nav>
-            <ul>
+            <ul class="opcoes">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#autoexame">Autoexame</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="contatos/contato.html">Contatos</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section id="hero">
-            <h2>Autoexame de Mama: Detectando Nódulos com Modelos 3D</h2>
-            <p>O câncer de mama é uma das principais causas de morte entre mulheres, e a detecção precoce é fundamental para aumentar as chances de cura. O autoexame das mamas é uma prática recomendada para ajudar a identificar alterações e possíveis nódulos no tecido mamário.</p>
-        </section>
-
-        <section id="sobre">
-            <h3>Como Funciona o Autoexame com Modelos 3D?</h3>
+        <section id="sobre" class="centralizar">
+            <h3>Como Funciona o Autoexame</h3>
             <p>Nossos <strong>modelos de seios em 3D</strong>, projetados com base na anatomia real, foram criados para simular com precisão a textura e a sensação do tecido mamário, incluindo a presença de <strong>nódulos palpáveis</strong>. Esses modelos permitem que você:</p>
             <ul>
                 <li><strong>Pratique o autoexame</strong>: Toque no modelo para identificar diferentes texturas e localizar nódulos que imitam aqueles encontrados em exames reais.</li>
                 <li><strong>Entenda as diferenças</strong>: Através da simulação tátil, você aprenderá a diferenciar entre o tecido mamário normal e os nódulos de diferentes tamanhos e densidades, o que pode ser vital para uma detecção precoce.</li>
             </ul>
         </section>
-
-        <section id="importancia">
-            <h3>Por Que o Modelo 3D é Importante?</h3>
+    
+        <section id="importancia" class="centralizar">
+            <h3>A Importancia de fazer o Autoexame</h3>
             <ul>
                 <li><strong>Experiência Realista</strong>: O uso de materiais flexíveis na impressão 3D recria a suavidade e elasticidade do tecido mamário, permitindo uma experiência autêntica e educativa.</li>
                 <li><strong>Treinamento Seguro</strong>: Em um ambiente seguro, você pode praticar o toque e aprender a identificar possíveis irregularidades, fortalecendo sua confiança no autoexame.</li>
                 <li><strong>Prevenção e Conscientização</strong>: Conhecimento é poder! Quanto mais familiarizada você estiver com seu corpo, mais cedo poderá perceber qualquer mudança.</li>
             </ul>
         </section>
-
-        <section id="como-fazer">
+    
+        <section id="como-fazer" class="centralizar">
             <h3>Como Realizar o Autoexame?</h3>
+            <h3>Vedeo de animação com a audio descrição?</h3>
             <ol>
                 <li><strong>Toque e observe</strong>: Inspecione visualmente suas mamas em frente ao espelho. Observe alterações no formato, tamanho ou na pele.</li>
                 <li><strong>Deitada ou em pé</strong>: Com os dedos estendidos, pressione suavemente as mamas com movimentos circulares, cobrindo toda a área, inclusive a axila.</li>
@@ -54,10 +50,22 @@
             </ol>
             <p><strong>A prevenção começa por você!</strong> Treine com nossos modelos 3D e fique sempre atenta à saúde das suas mamas.</p>
         </section>
+        
     </main>
+     <!-- Botão de alternância do chatbot -->
+     <div id="chatbot-toggle" onclick="toggleChat()">
+        <img src="img/chatbox_transparentsvg.svg" alt="Chat">
+    </div>
+    
+    <!-- Caixa de chat -->
+    <div id="chatbox" class="hidden">
+        <div id="history"></div>
+        <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+        <button id="btn-submit" >Enviar</button>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Vida Rosa. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Toque Rosa. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
