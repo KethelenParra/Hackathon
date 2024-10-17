@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <title>Busca de UBS Próximas</title>
+    <title>Busca de centros hospitalares próximas</title>
     <style>
-        /* Adicionando alguns estilos simples */
         body {
             font-family: Arial, sans-serif;
         }
         #map {
             height: 400px;
-            width: 100%;
+            width: 90%;
         }
         #ubsList {
             margin-top: 20px;
         }
 
-        /* Centralizando e estilizando o título */
         h1 {
             text-align: center;
             font-size: 2em;
@@ -77,30 +75,27 @@
         </nav>
     </header>
 
-    <h1>Buscar UBS Próximas</h1>
+    <h1>Buscar centros de saúde próximos</h1>
     
     <form id="cepForm">
         <label for="cep">Insira seu CEP:</label>
         <input type="text" id="cep" name="cep" required>
-        <button type="submit">Buscar UBS</button>
+        <button type="submit">Buscar</button>
     </form>
 
-    <!-- Div para o mapa -->
     <div id="map"></div>
 
-    <!-- Lista das UBS encontradas -->
     <div id="ubsList"></div>
 
     <footer>
         <p>&copy; 2024 Toque Rosa. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Script de integração da Google Maps API -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo8036wimZvcfPCTkKxXTiFz1YLBbibZc&libraries=places"
       defer
     ></script>
 
-    <script src="script.js"></script> <!-- Script externo para lógica JS -->
+    <script src="script.js"></script> 
 </body>
 </html>

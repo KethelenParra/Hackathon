@@ -1,24 +1,21 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos do Body */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #fdfdfd;
     color: #333;
     display: flex;
-    justify-content: center; /* Centraliza todo o conteúdo horizontalmente */
+    justify-content: center; 
     align-items: center;
     flex-direction: column;
     text-align: justify;
 }
 
-/* Header */
 header {
     display: flex;
     align-items: center;
@@ -75,11 +72,10 @@ nav ul li a:hover {
     margin-right: 25px;
 }
 
-/* Seções */
 main {
-    max-width: 800px; /* Limita a largura do conteúdo para melhor legibilidade */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    text-align: center; /* Centraliza o texto */
+    max-width: 800px; 
+    margin: 0 auto; 
+    text-align: center; 
     padding: 20px;
 }
 
@@ -94,14 +90,14 @@ section h3 {
 }
 
 section ul, section ol {
-    text-align: left; /* Mantém listas alinhadas à esquerda para melhor leitura */
+    text-align: left; 
     margin-left: 20px;
     margin-top: 10px;
 }
 
 section p {
     margin-top: 10px;
-    text-align: justify; /* Justifica o texto para melhorar a estética */
+    text-align: justify;
 }
 
 /* Footer */
@@ -114,35 +110,33 @@ footer {
     width: 100%;
 }
 
-/* Estilo para o contêiner de botões */
 .button-container {
     display: flex;
-    justify-content: space-between; /* Espaço igual entre os botões */
-    margin-top: 10px; /* Espaço acima dos botões */
+    justify-content: space-between; 
+    margin-top: 10px; 
 }
 
-/* Estilos do botão de enviar e limpar */
 #btn-submit,
 #btn-clear {
-    background-color: #f5e0e7; /* Cor de fundo semelhante */
-    color: #333; /* Cor do texto */
-    border: none; /* Remover bordas */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px; /* Espaçamento interno */
-    cursor: pointer; /* Mudar o cursor ao passar sobre o botão */
-    transition: background-color 0.3s; /* Transição suave para o fundo */
-    margin-right: 5px; /* Margem direita para o botão de enviar */
+    background-color: #f5e0e7; 
+    color: #333;
+    border: none;
+    border-radius: 5px; 
+    padding: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    margin-right: 5px; 
 }
 
 /* Remover a margem do último botão */
 #btn-clear {
-    margin-right: 0; /* Remove a margem direita do botão de limpar */
+    margin-right: 0; 
 }
 
 /* Efeito hover para os botões */
 #btn-submit:hover,
 #btn-clear:hover {
-    background-color: #f8cdd1; /* Cor de fundo ao passar o mouse */
+    background-color: #f8cdd1; 
 }
 
 .carousel-container {
@@ -266,8 +260,8 @@ input[type="radio"]:checked + label {
 
 /* Estilo do Chatbox */
 #chatbox {
-    width: 400px; /* Aumente a largura */
-    height: 500px; /* Aumente a altura */
+    width: 400px; 
+    height: 500px; 
     position: fixed;
     bottom: 80px;
     right: 20px;
@@ -342,7 +336,6 @@ input[type="radio"]:checked + label {
     align-self: flex-start;
 }
 
-/* Estilo para o histórico de conversas */
 #history {
     display: flex;
     flex-direction: column;
@@ -373,7 +366,6 @@ input[type="radio"]:checked + label {
     background-color: #f8cdd1;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column;

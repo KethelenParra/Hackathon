@@ -4,24 +4,22 @@ document.getElementById('cepForm').addEventListener('submit', function(event) {
     buscarCoordenadas(cep);
 });
 
-let map; // Variável para o mapa
-let service; // Serviço para a API Places
-let infowindow; // Janela de informação do mapa
+let map; 
+let service; 
+let infowindow; 
 
-function initMap(lat, lng) {
-    // Inicializando o mapa na coordenada recebida
-    const location = new google.maps.LatLng(lat, lng);
+function initMap() {
+    // Inicializando o mapa em uma posição padrão (ex: Brasil)
+    const defaultLocation = { lat: -14.2350, lng: -51.9253 };
     map = new google.maps.Map(document.getElementById('map'), {
-        center: location,
-        zoom: 14
+        center: defaultLocation,
+        zoom: 5 
     });
     
-    // Inicializando a janela de informação para os marcadores
     infowindow = new google.maps.InfoWindow();
 }
 
 function buscarCoordenadas(cep) {
-    // Fazendo a requisição para a API de Geocoding do Google
     const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${cep}&key=AIzaSyBo8036wimZvcfPCTkKxXTiFz1YLBbibZc`;
 
     fetch(geocodeUrl)
@@ -32,8 +30,9 @@ function buscarCoordenadas(cep) {
                 const lat = location.lat;
                 const lng = location.lng;
 
-                // Inicia o mapa com a localização geocodificada
-                initMap(lat, lng);
+                // Movendo o mapa para a nova localização e aplicando zoom
+                map.setCenter({ lat, lng });
+                map.setZoom(14); 
 
                 // Busca UBS (hospitais) próximos usando a Places API
                 buscarUbsProximas(lat, lng);
@@ -53,14 +52,14 @@ function buscarUbsProximas(lat, lng) {
     service = new google.maps.places.PlacesService(map);
     const request = {
         location: location,
-        radius: '5000', // Raio de 5 km
-        type: ['hospital'] // Buscando hospitais/UBS
+        radius: '5000', 
+        type: ['hospital'] 
     };
 
     service.nearbySearch(request, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             const ubsListDiv = document.getElementById('ubsList');
-            ubsListDiv.innerHTML = ''; // Limpa a lista anterior
+            ubsListDiv.innerHTML = '';
 
             // Limita para os 5 primeiros resultados
             const top5Results = results.slice(0, 5);
@@ -80,7 +79,6 @@ function buscarUbsProximas(lat, lng) {
     });
 }
 
-
 function addMarker(place) {
     // Adiciona marcador para a UBS no mapa
     const marker = new google.maps.Marker({
@@ -95,3 +93,5 @@ function addMarker(place) {
     });
 }
 
+// Inicializando o mapa ao carregar a página
+window.onload = initMap;

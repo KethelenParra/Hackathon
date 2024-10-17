@@ -19,15 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Garantir que o chat comece oculto
     const chatbox = document.getElementById('chatbox');
-    chatbox.classList.add('hidden');  // Chat começa oculto
+    chatbox.classList.add('hidden'); 
 
-    // Evento de clique no botão do chatbot
     document.getElementById('chatbot-toggle').addEventListener('click', toggleChat);
 
-    // Abre automaticamente o chatbot após 50 segundos
     setTimeout(function() {
         toggleChat(); // Abre o chatbox após o tempo definido
-    }, 50000); // 50 segundos em milissegundos (50000)
+    }, 5000); 
 
     // Função para limpar completamente o chat e mostrar perguntas sugeridas
     function showSuggestedQuestions() {
@@ -109,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Rolar o histórico para mostrar a última mensagem
                     history.scrollTop = history.scrollHeight;
-                }, 1000); // Atraso de 1 segundo antes de adicionar a mensagem extra
+                }, 1000); 
             }
 
             // Rolar o histórico para mostrar a última mensagem
@@ -119,14 +117,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Evento do botão de "Limpar" para limpar o chat e voltar às perguntas sugeridas
     document.getElementById('btn-clear').addEventListener('click', function() {
-        // Aqui, limpamos todo o histórico antes de exibir as sugestões de novo
+        
         const history = document.getElementById('history');
-        history.innerHTML = '';  // Limpa o histórico de todas as mensagens
+        history.innerHTML = ''; 
 
-        showSuggestedQuestions(); // Volta para as perguntas sugeridas
+        showSuggestedQuestions(); 
     });
 
-    // Chama a função para mostrar as perguntas sugeridas assim que a página carregar
     showSuggestedQuestions();
 
     // Enviar mensagem manualmente (fora das sugestões)
@@ -135,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = messageInput.value.trim();
         if (message !== '') {
             handleSuggestedQuestion(message, document.querySelector('.suggestions-container'));
-            messageInput.value = ''; // Limpar o campo de entrada
+            messageInput.value = ''; 
         }
     });
 });
