@@ -20,7 +20,7 @@ function initMap() {
 }
 
 function buscarCoordenadas(cep) {
-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${cep}&key=AIzaSyBo8036wimZvcfPCTkKxXTiFz1YLBbibZc`;
+    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${cep}&key=SUA_CHAVE_DA_API`;
 
     fetch(geocodeUrl)
         .then(response => response.json())
